@@ -1,4 +1,4 @@
-<h5>Content with Filters</h5>
+<h5>Content with Filters (PrimeNG)</h5>
 <p-dropdown [options]="countries" [(ngModel)]="selectedCountry" optionLabel="name" [filter]="true" filterBy="name" [showClear]="true" placeholder="Select a Country" (onChange)="changeDDValue()">
     <ng-template pTemplate="selectedItem">
         <div class="country-item country-item-value"  *ngIf="selectedCountry">
@@ -11,3 +11,13 @@
         </div>
     </ng-template>
 </p-dropdown>
+
+
+<h4>mat-select with Search</h4>
+<mat-form-field>
+  <mat-label>State</mat-label>
+  <mat-select>
+     <input (keyup)="onKey($event)">
+    <mat-option *ngFor="let state of selectedStates" [value]="state.name">{{state.name}}</mat-option>
+  </mat-select>
+</mat-form-field>
